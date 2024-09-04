@@ -1,0 +1,10 @@
+//
+//  module.modulemap
+//
+//  Copyright 2024 Raonsecure
+//
+
+module OpenSSLWrapper {
+    header "OpenSSLWrapper.h"
+    export *
+}
