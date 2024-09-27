@@ -22,7 +22,7 @@ jobs:
     - name: Utility Test
       run: |
         cd source/DIDClientSDK
-        xcodebuild test -scheme DIDUtilitySDKTests -workspace DIDClientSDK.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4'
+        xcodebuild test -scheme DIDUtilitySDKTests -workspace DIDClientSDK.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest'
     - name: DataModel Build
       run: |
         cd source/DIDClientSDK
@@ -30,7 +30,7 @@ jobs:
     - name: DataModel Test
       run: |
         cd source/DIDClientSDK
-        xcodebuild test -scheme DIDDataModelSDKTests -workspace DIDClientSDK.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4'
+        xcodebuild test -scheme DIDDataModelSDKTests -workspace DIDClientSDK.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest'
     - name: Core Build
       run: |
         cd source/DIDClientSDK
@@ -38,4 +38,4 @@ jobs:
     - name: Core Test
       run: |
         cd source/DIDClientSDK
-        xcodebuild test -scheme DIDCoreSDKTests -workspace DIDClientSDK.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4'
+        xcodebuild test -scheme DIDCoreSDKTests -workspace DIDClientSDK.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest'
