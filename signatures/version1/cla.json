@@ -1,3 +1,12 @@
 {
-   "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "woosang-raon",
+      "id": 180238175,
+      "comment_id": 2406587052,
+      "created_at": "2024-10-11T05:35:52Z",
+      "repoId": 850938077,
+      "pullRequestNo": 4
+    }
+  ]
 }
