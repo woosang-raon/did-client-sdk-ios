@@ -25,7 +25,7 @@ $ ./build_xcframework.sh
 ## SDK Application Method
 1. Copy the `DIDUtilitySDK.xcframework` file to the framework directory of the app project.
 2. Add the framework to the app project dependencies.
-3. Set the framework to `Embede & Sign`.
+3. Set the framework to `Embeded & Sign`.
 
 <br>
 
