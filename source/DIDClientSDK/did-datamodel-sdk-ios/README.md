@@ -18,14 +18,14 @@ This document is a guide for using the DataModel SDK, defining the data model us
 ```groovy
 $ ./build_xcframework.sh
 ```
-2. Once archiving done, the `DIDDataModelSDK.xcframework` file will be generated in the `release/` folder.
+2. Once archiving done, the `DIDDataModelSDK.xcframework` file will be generated in the `output/` folder.
 <br>
 
 
 ## SDK Application Method
 1. Copy the `DIDDataModelSDK.xcframework` file to the framework directory of the app project.
 2. Add the framework to the app project dependencies.
-3. Set the framework to `Embede & Sign`.
+3. Set the framework to `Embeded & Sign`.
 
 <br>
 

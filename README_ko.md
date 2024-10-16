@@ -101,19 +101,19 @@ did-client-sdk-ios
 
 1. 앱 프로젝트의 프레임워크 디렉토리에 `DIDCoreSDK.xcframework` 파일을 복사합니다.
 2. 앱 프로젝트 의존성에 프레임워크를 추가합니다.
-3. 프레임워크를 `Embede & Sign`으로 설정합니다.
+3. 프레임워크를 `Embeded & Sign`으로 설정합니다.
 
 ### DataModel SDK
 
 1. 앱 프로젝트의 프레임워크 디렉토리에 `DIDDataModelSDK.xcframework` 파일을 복사합니다.
 2. 앱 프로젝트 의존성에 프레임워크를 추가합니다.
-3. 프레임워크를 `Embede & Sign`으로 설정합니다.
+3. 프레임워크를 `Embeded & Sign`으로 설정합니다.
 
 ### Utility SDK
 
 1. 앱 프로젝트의 프레임워크 디렉토리에 `DIDUtilitySDK.xcframework` 파일을 복사합니다.
 2. 앱 프로젝트 의존성에 프레임워크를 추가합니다.
-3. 프레임워크를 `Embede & Sign`으로 설정합니다.
+3. 프레임워크를 `Embeded & Sign`으로 설정합니다.
 
 ## API 참조
 

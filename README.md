@@ -101,19 +101,19 @@ Libraries can be found in the [releases folder](source/DIDClientSDK/release).
 
 1. Copy the `DIDCoreSDK.xcframework` file to the framework directory of the app project.
 2. Add the framework to the app project dependencies.
-3. Set the framework to `Embede & Sign`.
+3. Set the framework to `Embeded & Sign`.
 
 ### DataModel SDK
 
 1. Copy the `DIDDataModelSDK.xcframework` file to the framework directory of the app project.
 2. Add the framework to the app project dependencies.
-3. Set the framework to `Embede & Sign`.
+3. Set the framework to `Embeded & Sign`.
 
 ### Utility SDK
 
 1. Copy the `DIDUtilitySDK.xcframework` file to the framework directory of the app project.
 2. Add the framework to the app project dependencies.
-3. Set the framework to `Embede & Sign`.
+3. Set the framework to `Embeded & Sign`.
 
 ## API Reference
 
