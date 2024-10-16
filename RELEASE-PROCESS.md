@@ -32,7 +32,7 @@ The project follows the "X.Y.Z" versioning format.
    After QA Process, merge the release/QA-VX.Y.Z branch into both the main and develop branches.
 
 5. Release via GitHub Action  
-   When the release version is merged into the main branch, the CI/CD pipeline will be triggered to tag the release and automatically publish it on GitHub with the following details:
+   When the release version is merged into the main branch, the [CI/CD pipeline](https://github.com/OmniOneID/did-release/blob/main/docs/CI_CD_PIPELINE.md) will be triggered to tag the release and automatically publish it on GitHub with the following details:
    - Version (tag)
    - Summary of changes (from the change log)
    - Source code archive
