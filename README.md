@@ -48,7 +48,7 @@ did-client-sdk-ios
         ├── did-communication-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDCommunicationSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README_ko.md
         │   ├── README.md
         │   ├── SECURITY.md
@@ -56,7 +56,7 @@ did-client-sdk-ios
         ├── did-core-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDCoreSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README.md
         │   ├── README_ko.md
         │   ├── SECURITY.md
@@ -64,7 +64,7 @@ did-client-sdk-ios
         ├── did-datamodel-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDDataModelSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README.md
         │   ├── README_ko.md
         │   ├── SECURITY.md
@@ -72,7 +72,7 @@ did-client-sdk-ios
         ├── did-utility-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDUtilitySDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README.md
         │   ├── README_ko.md
         │   ├── SECURITY.md
@@ -80,7 +80,7 @@ did-client-sdk-ios
         ├── did-wallet-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDWalletSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README.md
         │   ├── README_ko.md
         │   ├── SECURITY.md
@@ -110,7 +110,7 @@ did-client-sdk-ios
 | CHANGELOG.md            | Version-specific changes in the project         |
 | CODE_OF_CONDUCT.md      | Code of conduct for contributors                |
 | CONTRIBUTING.md         | Contribution guidelines and procedures          |
-| LICENSE-dependencies.md | Licenses for the project’s dependency libraries |
+| dependencies-license.md | Licenses for the project’s dependency libraries |
 | MAINTAINERS.md          | General guidelines for maintaining              |
 | RELEASE-PROCESS.md      | Release process                                 |
 | SECURITY.md             | Security policies and vulnerability reporting   |
