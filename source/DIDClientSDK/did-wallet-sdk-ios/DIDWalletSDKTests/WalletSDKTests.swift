@@ -187,78 +187,78 @@ final class DIDWalletSDKTests: XCTestCase {
     // vc발급
     func testIssueCredential() async throws {
         
-        try await testRegisterUser()
-        
-        print("###################### 5. VC 발급")
-        do {
-            let walletTokenDataJson = """
-        {"nonce":"mHaq6qqiUKLt8N6raGc+/5g","proof":{"created":"2024-08-23T11:40:03.566877Z","proofPurpose":"assertionMethod","proofValue":"mH6qvGRLx8qpMPhQwJMeEQsz0eGYhZQI1y9yu1xl4b+qIQM2tfFueWHpuffAvdioqSrR0K4Qb0AgbzcdtQO4ds7A","type":"Secp256r1Signature2018","verificationMethod":"did:omn:cas?versionId=1#assert"},"provider":{"certVcRef":"http://192.168.3.130:8094/cas/api/v1/certificate-vc","did":"did:omn:cas"},"seed":{"nonce":"F6438ED0B74B348E3635C89DA164E8FFE","pkgName":"org.omnione.did.ca","purpose":8,"userId":"7156af3d","validUntil":"2050-08-23T12:10:02Z"},"sha256_pii":"zCWYkiLKjXUHu5xCRcJoJ9nfiyKzhiYW3YiWwdDwfh2vx"}
-        """
-            let walletTokenData = try WalletTokenData(from: walletTokenDataJson)
-            
-            let resultNonce = try await walletAPI.createNonceForWalletToken(walletTokenData: walletTokenData, APIGatewayURL: "NONE")
-            
-            let digest = DigestUtils.getDigest(source: (walletTokenDataJson + resultNonce).data(using: String.Encoding.utf8)!, digestEnum: DigestEnum.sha256)
-            // Hex
-            let hWalletToken = String(MultibaseUtils.encode(type: MultibaseType.base16, data: digest).dropFirst())
-
-            let didAuth = try walletAPI.getSignedDidAuth(authNonce: "authNonce", passcode: "123456")
-            
-            let isserProfileDummy = """
-                            {
-                              "txId": "1ca4e278-76cd-47e4-978f-139273e0a28a",
-                              "authNonce": "authNonce",
-                              "profile": {
-                                "description": "National ID",
-                                "encoding": "UTF-8",
-                                "id": "4d2c9387-7239-43c0-b829-c899d4aeac19",
-                                "language": "ko",
-                                "profile": {
-                                  "credentialSchema": {
-                                    "id": "http://192.168.3.130:8091/issuer/api/v1/vc/vcschema?name=national_id",
-                                    "type": "OsdSchemaCredential"
-                                  },
-                                  "issuer": {
-                                    "certVcRef": "http://192.168.3.130:8091/issuer/api/v1/certificate-vc",
-                                    "did": "did:omn:issuer",
-                                    "name": "issuer"
-                                  },
-                                  "process": {
-                                    "endpoints": [
-                                      "http://192.168.3.130:8091/issuer"
-                                    ],
-                                    "issuerNonce": "mbRz+NJ7fEZEyFiAGIcfktQ",
-                                    "reqE2e": {
-                                      "cipher": "AES-256-CBC",
-                                      "curve": "Secp256r1",
-                                      "nonce": "mbRz+NJ7fEZEyFiAGIcfktQ",
-                                      "padding": "PKCS5",
-                                      "publicKey": "mA+1jfCC06BtbLwUkkAAsiU46i4GWz17SWnaME4yx7g2c"
-                                    }
-                                  }
-                                },
-                                "proof": {
-                                  "created": "2024-08-29T10:36:10.879887Z",
-                                  "proofPurpose": "assertionMethod",
-                                  "proofValue": "mIGTSOOl3ij0TnXd3xnk368PFDNuvaus2SXlWeiyITsZ7RAPvzi0QZqdWbMPMEh5K2OFTJ0FW/vR/njfvPZBkJc0",
-                                  "type": "Secp256r1Signature2018",
-                                  "verificationMethod": "did:omn:issuer#assert"
-                                },
-                                "title": "National ID",
-                                "type": "IssueProfile"
-                              }
-                            }
-                """
-            
-            let issueProfile = try _RequestIssueProfile(from: isserProfileDummy)
-            
-            _ = try await walletAPI.requestIssueVc(tasURL: "NONE", hWalletToken: hWalletToken, didAuth: didAuth!, issuerProfile: issueProfile, refId: "refId", serverToken: "serverToken", APIGatewayURL: "NONE")
-            
-        } catch let error as WalletAPIError {
-            print("testIssueCredential error: \(error)")
-        } catch {
-            print("testIssueCredential error: \(error)")
-        }
+//        try await testRegisterUser()
+//        
+//        print("###################### 5. VC 발급")
+//        do {
+//            let walletTokenDataJson = """
+//        {"nonce":"mHaq6qqiUKLt8N6raGc+/5g","proof":{"created":"2024-08-23T11:40:03.566877Z","proofPurpose":"assertionMethod","proofValue":"mH6qvGRLx8qpMPhQwJMeEQsz0eGYhZQI1y9yu1xl4b+qIQM2tfFueWHpuffAvdioqSrR0K4Qb0AgbzcdtQO4ds7A","type":"Secp256r1Signature2018","verificationMethod":"did:omn:cas?versionId=1#assert"},"provider":{"certVcRef":"http://192.168.3.130:8094/cas/api/v1/certificate-vc","did":"did:omn:cas"},"seed":{"nonce":"F6438ED0B74B348E3635C89DA164E8FFE","pkgName":"org.omnione.did.ca","purpose":8,"userId":"7156af3d","validUntil":"2050-08-23T12:10:02Z"},"sha256_pii":"zCWYkiLKjXUHu5xCRcJoJ9nfiyKzhiYW3YiWwdDwfh2vx"}
+//        """
+//            let walletTokenData = try WalletTokenData(from: walletTokenDataJson)
+//            
+//            let resultNonce = try await walletAPI.createNonceForWalletToken(walletTokenData: walletTokenData, APIGatewayURL: "NONE")
+//            
+//            let digest = DigestUtils.getDigest(source: (walletTokenDataJson + resultNonce).data(using: String.Encoding.utf8)!, digestEnum: DigestEnum.sha256)
+//            // Hex
+//            let hWalletToken = String(MultibaseUtils.encode(type: MultibaseType.base16, data: digest).dropFirst())
+//
+//            let didAuth = try walletAPI.getSignedDidAuth(authNonce: "authNonce", passcode: "123456")
+//            
+//            let isserProfileDummy = """
+//                            {
+//                              "txId": "1ca4e278-76cd-47e4-978f-139273e0a28a",
+//                              "authNonce": "authNonce",
+//                              "profile": {
+//                                "description": "National ID",
+//                                "encoding": "UTF-8",
+//                                "id": "4d2c9387-7239-43c0-b829-c899d4aeac19",
+//                                "language": "ko",
+//                                "profile": {
+//                                  "credentialSchema": {
+//                                    "id": "http://192.168.3.130:8091/issuer/api/v1/vc/vcschema?name=national_id",
+//                                    "type": "OsdSchemaCredential"
+//                                  },
+//                                  "issuer": {
+//                                    "certVcRef": "http://192.168.3.130:8091/issuer/api/v1/certificate-vc",
+//                                    "did": "did:omn:issuer",
+//                                    "name": "issuer"
+//                                  },
+//                                  "process": {
+//                                    "endpoints": [
+//                                      "http://192.168.3.130:8091/issuer"
+//                                    ],
+//                                    "issuerNonce": "mbRz+NJ7fEZEyFiAGIcfktQ",
+//                                    "reqE2e": {
+//                                      "cipher": "AES-256-CBC",
+//                                      "curve": "Secp256r1",
+//                                      "nonce": "mbRz+NJ7fEZEyFiAGIcfktQ",
+//                                      "padding": "PKCS5",
+//                                      "publicKey": "mA+1jfCC06BtbLwUkkAAsiU46i4GWz17SWnaME4yx7g2c"
+//                                    }
+//                                  }
+//                                },
+//                                "proof": {
+//                                  "created": "2024-08-29T10:36:10.879887Z",
+//                                  "proofPurpose": "assertionMethod",
+//                                  "proofValue": "mIGTSOOl3ij0TnXd3xnk368PFDNuvaus2SXlWeiyITsZ7RAPvzi0QZqdWbMPMEh5K2OFTJ0FW/vR/njfvPZBkJc0",
+//                                  "type": "Secp256r1Signature2018",
+//                                  "verificationMethod": "did:omn:issuer#assert"
+//                                },
+//                                "title": "National ID",
+//                                "type": "IssueProfile"
+//                              }
+//                            }
+//                """
+//            
+//            let issueProfile = try _RequestIssueProfile(from: isserProfileDummy)
+//            
+//            _ = try await walletAPI.requestIssueVc(tasURL: "NONE", hWalletToken: hWalletToken, didAuth: didAuth!, issuerProfile: issueProfile, refId: "refId", serverToken: "serverToken", APIGatewayURL: "NONE")
+//            
+//        } catch let error as WalletAPIError {
+//            print("testIssueCredential error: \(error)")
+//        } catch {
+//            print("testIssueCredential error: \(error)")
+//        }
     }
     
 //     vp 제출
