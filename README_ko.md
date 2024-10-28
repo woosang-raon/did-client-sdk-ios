@@ -47,7 +47,7 @@ did-client-sdk-ios
         ├── did-communication-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDCommunicationSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README_ko.md
         │   ├── README.md
         │   ├── SECURITY.md
@@ -55,7 +55,7 @@ did-client-sdk-ios
         ├── did-core-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDCoreSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README_ko.md
         │   ├── README.md
         │   ├── SECURITY.md
@@ -63,7 +63,7 @@ did-client-sdk-ios
         ├── did-datamodel-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDDataModelSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README_ko.md
         │   ├── README.md
         │   ├── SECURITY.md
@@ -71,7 +71,7 @@ did-client-sdk-ios
         ├── did-utility-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDUtilitySDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README_ko.md
         │   ├── README.md
         │   ├── SECURITY.md
@@ -79,7 +79,7 @@ did-client-sdk-ios
         ├── did-wallet-sdk-ios
         │   ├── CHANGELOG.md
         │   ├── DIDWalletSDK.xcodeproj
-        │   ├── LICENSE-dependencies.md
+        │   ├── dependencies-license.md
         │   ├── README_ko.md
         │   ├── README.md
         │   ├── SECURITY.md
@@ -109,7 +109,7 @@ did-client-sdk-ios
 | CHANGELOG.md            | 프로젝트 버전별 변경사항                   |
 | CODE_OF_CONDUCT.md      | 기여자의 행동강령                        |
 | CONTRIBUTING.md         | 기여 절차 및 방법                       |
-| LICENSE-dependencies.md | 프로젝트 의존성 라이브러리에 대한 라이선스     |
+| dependencies-license.md | 프로젝트 의존성 라이브러리에 대한 라이선스     |
 | MAINTAINERS.md          | 유지관리 가이드                         |
 | RELEASE-PROCESS.md      | 릴리즈 절차                            |
 | SECURITY.md             | 보안취약점 보고 및 보안정책                | 
