@@ -11,6 +11,13 @@ on:
     branches: [ "develop" ]
 
 jobs:
+  print:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Print Test
+      run: |
+        echo "current directory : `pwd`"
   build:
     runs-on: macos-latest
     steps:
