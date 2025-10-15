@@ -18,7 +18,7 @@
 import Foundation
 import OrderedCollections
 
-struct ZKPManager
+public struct ZKPManager
 {
     typealias C = WalletCoreCommonError
     typealias E = ZKPManagerError

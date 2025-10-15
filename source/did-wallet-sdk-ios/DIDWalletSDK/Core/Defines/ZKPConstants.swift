@@ -19,7 +19,7 @@ import Foundation
 
 struct ZKPConstants
 {
-    static let masterSecretKey   : String = "masterSecret"
+    static let masterSecretKey   : String = "master_secret"
     static let delta             : String = "DELTA"
     
     static let iteration         : Int = 4

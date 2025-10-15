@@ -24,14 +24,30 @@ public struct ZKProof : Jsonable
     public let requestedProof : RequestedProof
     public let identifiers : [Identifier]
     
+    enum CodingKeys: String, CodingKey {
+        case proofs
+        case aggregatedProof = "aggregated_proof"
+        case requestedProof = "requested_proof"
+        case identifiers
+    }
+    
     public struct SubProof : Codable
     {
         public let primaryProof : PrimaryProof
+        
+        enum CodingKeys: String, CodingKey {
+            case primaryProof = "primary_proof"
+        }
         
         public struct PrimaryProof : Codable
         {
             public let eqProof : PrimaryEqualProof
             public let neProofs : [PrimaryPredicateInequalityProof]
+            
+            enum CodingKeys: String, CodingKey {
+                case eqProof = "eq_proof"
+                case neProofs = "ne_proofs"
+            }
             
             public struct PrimaryEqualProof : Codable
             {
@@ -41,6 +57,15 @@ public struct ZKProof : Jsonable
                 public let v : BigIntString
                 public let m : BigIntStringDictionary
                 public let m2 : BigIntString
+                
+                enum CodingKeys: String, CodingKey {
+                    case revealedAttrs = "revealed_attr"
+                    case aPrime = "a_prime"
+                    case e
+                    case v
+                    case m
+                    case m2
+                }
             }
             
             public struct PrimaryPredicateInequalityProof : Codable
@@ -59,6 +84,11 @@ public struct ZKProof : Jsonable
     {
         public let cHash : BigIntString
         public let cList : [[UInt8]]
+        
+        enum CodingKeys: String, CodingKey {
+            case cHash = "c_hash"
+            case cList = "c_list"
+        }
     }
 
     public struct RequestedProof : Codable
@@ -68,6 +98,12 @@ public struct ZKProof : Jsonable
         public let revealedAttrs : RequestedAttrDictionary
         public let unrevealedAttrs : RequestedAttrDictionary
         
+        enum CodingKeys: String, CodingKey {
+            case selfAttestedAttrs = "self_attested_attrs"
+            case predicates
+            case revealedAttrs = "revealed_attrs"
+            case unrevealedAttrs = "unrevealed_attrs"
+        }
     }
     
     public struct RequestedAttribute : Codable
@@ -75,12 +111,23 @@ public struct ZKProof : Jsonable
         public let subProofIndex : Int
         public let raw : String?
         public let encoded : String?
+        
+        enum CodingKeys: String, CodingKey {
+            case subProofIndex = "sub_proof_index"
+            case raw
+            case encoded
+        }
     }
 
     public struct Identifier : Codable
     {
         public let credDefId : String
         public let schemaId : String
+        
+        enum CodingKeys: String, CodingKey {
+            case credDefId = "cred_def_id"
+            case schemaId = "schema_id"
+        }
     }
     
     public struct Predicate : Codable
@@ -88,6 +135,12 @@ public struct ZKProof : Jsonable
         public let pType : PredicateType
         public let pValue : Int
         public let attrName : String
+        
+        enum CodingKeys: String, CodingKey {
+            case pType = "p_type"
+            case pValue = "p_value"
+            case attrName = "attr_name"
+        }
         
         init(pType: PredicateType, pValue: Int, attrName: String) {
             self.pType = pType

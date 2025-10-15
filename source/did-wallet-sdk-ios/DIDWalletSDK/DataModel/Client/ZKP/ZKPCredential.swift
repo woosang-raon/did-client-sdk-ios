@@ -26,9 +26,22 @@ public struct ZKPCredential : Jsonable
     public var signature                 : CredentialSignature
     public let signatureCorrectnessProof : SignatureCorrectnessProof
     
+    enum CodingKeys: String, CodingKey {
+        case credentialId
+        case schemaId = "schema_id"
+        case credDefId = "cred_def_id"
+        case values
+        case signature
+        case signatureCorrectnessProof = "signature_correctness_proof"
+    }
+    
     public struct CredentialSignature : Jsonable
     {
         public var pCredential : PrimaryCredentialSignature
+        
+        enum CodingKeys: String, CodingKey {
+            case pCredential = "p_credential"
+        }
         
         public struct PrimaryCredentialSignature : Jsonable
         {
@@ -44,6 +57,19 @@ public struct ZKPCredential : Jsonable
     {
         public let se : BigIntString
         public let c  : BigIntString
+    }
+    
+    public init(mdlZKPVCJson: String) throws {
+        let jsonData = mdlZKPVCJson.data(using: .utf8)!
+        guard let jsonObject: [String : Any] = try JSONSerialization.jsonObject(with: jsonData) as? [String : Any],
+              let credentialId: String = jsonObject["credentialId"] as? String,
+              var credentialObject: [String : Any] = jsonObject["credential"] as? [String : Any] else {
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Invalid JSON format"))
+        }
+        
+        credentialObject["credentialId"] = credentialId
+        
+        self = try JSONDecoder().decode(ZKPCredential.self, from: JSONSerialization.data(withJSONObject: credentialObject, options: []))
     }
 }
 

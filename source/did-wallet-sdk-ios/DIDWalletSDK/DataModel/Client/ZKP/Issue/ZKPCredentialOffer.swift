@@ -28,6 +28,12 @@ public struct ZKPCredentialOffer : Jsonable
     /// Nonce
     public let nonce : BigIntString
     
+    enum CodingKeys: String, CodingKey {
+        case credDefId = "cred_def_id"
+        case schemaId = "schema_id"
+        case keyCorrectnessProof = "key_correctness_proof"
+        case nonce
+    }
 }
 
 public struct KeyCorrectnessProof : Jsonable
@@ -38,4 +44,10 @@ public struct KeyCorrectnessProof : Jsonable
     public let xzCap : BigIntString
     /// xrCap
     public let xrCap : BigIntStringDictionary
+    
+    enum CodingKeys: String, CodingKey {
+        case c
+        case xzCap = "xz_cap"
+        case xrCap = "xr_cap"
+    }
 }

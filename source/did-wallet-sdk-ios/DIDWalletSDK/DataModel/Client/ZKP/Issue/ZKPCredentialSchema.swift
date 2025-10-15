@@ -28,9 +28,20 @@ public struct ZKPCredentialSchema : Jsonable
     /// List of attribute names
     public let attrNames : [String]
     /// List of attribute types
-    public let attrTypes : [AttributeType]
+//    public let attrTypes : [AttributeType]
     /// Tag
     public let tag: String
+    
+    public let seqNo: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case version
+        case attrNames = "attr_names"
+        case tag
+        case seqNo
+    }
     
     public struct AttributeType : Jsonable
     {

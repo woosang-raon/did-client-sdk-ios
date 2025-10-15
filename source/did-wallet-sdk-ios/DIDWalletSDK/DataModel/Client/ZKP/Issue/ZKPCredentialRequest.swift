@@ -24,12 +24,27 @@ public struct ZKPCredentialRequest : Jsonable
     public let nonce    : BigIntString
     public let blindedMs : BlindedCredentialSecrets
     public let blindedMsCorrectnessProof : BlindedCredentialSecretsCorrectnessProof
+    
+    enum CodingKeys: String, CodingKey {
+        case proverDID = "prover_did"
+        case credDefId = "cred_def_id"
+        case nonce
+        case blindedMs = "blinded_ms"
+        case blindedMsCorrectnessProof = "blinded_ms_correctness_proof"
+    }
 }
 
 public struct BlindedCredentialSecrets: Jsonable
 {
     public let u : BigIntString
     public let hiddenAttributes : [String]
+    public let committedAttrs : [String : String] = [:]
+    
+    enum CodingKeys: String, CodingKey {
+        case u
+        case hiddenAttributes = "hidden_attributes"
+        case committedAttrs = "committed_attrs"
+    }
 }
 
 public struct BlindedCredentialSecretsCorrectnessProof : Jsonable
@@ -37,4 +52,12 @@ public struct BlindedCredentialSecretsCorrectnessProof : Jsonable
     public let c : BigIntString
     public let vDashCap : BigIntString
     public var mCaps : BigIntStringDictionary
+    public var rCaps : [String : String] = [:]
+    
+    enum CodingKeys: String, CodingKey {
+        case c
+        case vDashCap = "v_dash_cap"
+        case mCaps = "m_caps"
+        case rCaps = "r_caps"
+    }
 }

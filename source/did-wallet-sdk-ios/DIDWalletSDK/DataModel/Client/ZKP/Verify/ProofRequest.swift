@@ -27,11 +27,21 @@ import Foundation
 
 public struct ProofRequest : Jsonable
 {
+    public let nonRevoked : [String : String]
     public let name : String
-    public let version : String
+//    public let version : String
     public let nonce : BigIntString
     public let requestedAttributes : [String : AttributeInfo]?
     public let requestedPredicates : [String : PredicateInfo]?
+    
+    enum CodingKeys: String, CodingKey {
+        case nonRevoked
+        case name
+//        case version
+        case nonce
+        case requestedAttributes = "requested_attributes"
+        case requestedPredicates = "requested_predicates"
+    }
 }
 
 public struct AttributeInfo: Jsonable
@@ -46,6 +56,13 @@ public struct PredicateInfo: Jsonable
     public let pType : PredicateType
     public let pValue : Int
     public let restrictions : [[String : String]]
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case pType = "p_type"
+        case pValue = "p_value"
+        case restrictions
+    }
 }
 
 
